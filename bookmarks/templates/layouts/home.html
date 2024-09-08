@@ -4,4 +4,12 @@
 {% block content %}
 
 <h1>Bookmarks!</h1>
+{% if user.is_authenticated %}
+    {%if user.id == bookmark.user.id %}
+    <a>{{bookmark.title}}</a>
+    {% else %}
+    <a>No Bookmarks!</a>
+    {%endif%}
+{% endif %}
+
 {% endblock %}
